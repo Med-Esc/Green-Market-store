@@ -1,4 +1,5 @@
 import Home.Home;
+import Prodects.ProductsPage;
 import javax.swing.*;
 
 public class Main {
@@ -10,6 +11,10 @@ public class Main {
                 e.printStackTrace();
             }
             
+            // Uncomment the line below to launch the ProductsPage directly
+            // new ProductsPage().setVisible(true);
+            
+            // Or use the Home page as the entry point
             Home home = new Home();
             home.setVisible(true);
         });

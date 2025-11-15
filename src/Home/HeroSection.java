@@ -1,7 +1,8 @@
 package Home;
 
-import javax.swing.*;
+import Prodects.ProductsPage;
 import java.awt.*;
+import javax.swing.*;
 
 public class HeroSection extends JPanel {
     
@@ -45,6 +46,15 @@ public class HeroSection extends JPanel {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 ctaButton.setBackground(new Color(138, 43, 226));
             }
+        });
+        
+        ctaButton.addActionListener(e -> {
+            java.awt.Window window = SwingUtilities.getWindowAncestor(HeroSection.this);
+            if (window instanceof JFrame) {
+                ((JFrame) window).dispose();
+            }
+            ProductsPage productsPage = new ProductsPage();
+            productsPage.setVisible(true);
         });
         
         add(ctaButton, gbc);

@@ -1,7 +1,7 @@
 package Home;
 
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 
 public class Home extends JFrame {
     
@@ -34,9 +34,6 @@ public class Home extends JFrame {
         mainPanel.add(new Footer(), BorderLayout.SOUTH);
         
         add(mainPanel);
-        
-        // Connect cart button to modal
-        connectCartButton();
     }
     
     private void connectCartButton() {
@@ -50,7 +47,7 @@ public class Home extends JFrame {
             if (comp instanceof JButton) {
                 JButton btn = (JButton) comp;
                 if (btn.getText().contains("Cart")) {
-                    btn.addActionListener(e -> CartModal.showCart(this));
+                    // No-op: header now provides its own cart navigation behavior
                 }
             } else if (comp instanceof Container) {
                 findAndConnectCartButton((Container) comp);
